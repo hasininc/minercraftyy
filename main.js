@@ -153,8 +153,8 @@ function clamp(value, min, max) {
 function getLookVector() {
   const cp = Math.cos(player.pitch);
   return {
-    x: Math.sin(player.yaw) * cp,
-    y: Math.sin(player.pitch),
+    x: -Math.sin(player.yaw) * cp,
+    y: -Math.sin(player.pitch),
     z: Math.cos(player.yaw) * cp,
   };
 }
@@ -192,11 +192,11 @@ function updatePlayer(dt) {
     moveX /= length;
     moveZ /= length;
 
-    const forwardX = Math.sin(player.yaw);
-const forwardZ = Math.cos(player.yaw);
+    const forwardX = -Math.sin(player.yaw);
+    const forwardZ = Math.cos(player.yaw);
 
-const rightX = Math.cos(player.yaw);
-const rightZ = -Math.sin(player.yaw);
+    const rightX = Math.cos(player.yaw);
+    const rightZ = Math.sin(player.yaw);
 
 const targetVX = (forwardX * moveZ + rightX * moveX) * WALK_SPEED;
 const targetVZ = (forwardZ * moveZ + rightZ * moveX) * WALK_SPEED;
@@ -447,12 +447,12 @@ function raycast(maxDistance = 8) {
 }
 
 function normalToFace(normal) {
-  if (normal.x === 1) return "west";
-  if (normal.x === -1) return "east";
-  if (normal.y === 1) return "bottom";
-  if (normal.y === -1) return "top";
-  if (normal.z === 1) return "north";
-  return "south";
+  if (normal.x === 1) return "east";
+  if (normal.x === -1) return "west";
+  if (normal.y === 1) return "top";
+  if (normal.y === -1) return "bottom";
+  if (normal.z === 1) return "south";
+  return "north";
 }
 
 function breakBlock() {
