@@ -1,0 +1,225 @@
+:root {
+  --bg-top: #9ad7ff;
+  --bg-bottom: #dff6ff;
+  --panel: rgba(20, 30, 40, 0.72);
+  --panel-border: rgba(255, 255, 255, 0.16);
+  --text: #eff7f2;
+  --muted: #b8cdd0;
+  --accent: #ffd166;
+  --shadow: rgba(7, 11, 17, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.35), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(82, 182, 154, 0.24), transparent 35%);
+  pointer-events: none;
+}
+
+#game {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  cursor: crosshair;
+}
+
+.hud {
+  position: fixed;
+  inset: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.brand {
+  max-width: 280px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(21, 32, 42, 0.78), rgba(21, 32, 42, 0.6));
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 22px 55px var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.brand h1,
+.panel h2 {
+  margin: 0 0 8px;
+  letter-spacing: 0.04em;
+}
+
+.brand p,
+.panel p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.panel {
+  min-width: 220px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 16px 40px var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.controls,
+.stats {
+  display: grid;
+  gap: 10px;
+}
+
+.panel p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panel span {
+  color: var(--muted);
+}
+
+.panel strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.crosshair::before,
+.crosshair::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.crosshair::before {
+  top: 9px;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.crosshair::after {
+  left: 9px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+}
+
+.hotbar {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 22px;
+  background: rgba(24, 34, 44, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 18px 48px var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.slot {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.06);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.slot.selected {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.22);
+}
+
+.slot-swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.slot-key {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.slot-name {
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .hud {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+  }
+
+  .brand,
+  .panel {
+    max-width: none;
+    min-width: 0;
+  }
+
+  .hotbar {
+    width: calc(100vw - 24px);
+    justify-content: center;
+    gap: 6px;
+    bottom: 14px;
+    padding: 10px;
+  }
+
+  .slot {
+    width: 54px;
+    height: 54px;
+  }
+
+  .slot-name {
+    font-size: 10px;
+  }
+}
