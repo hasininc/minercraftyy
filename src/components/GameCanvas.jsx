@@ -361,12 +361,13 @@ export default function GameCanvas({
 
     function drawSky() {
       const gradient = ctx.createLinearGradient(0, 0, 0, window.innerHeight);
-      gradient.addColorStop(0, "#8fd3ff");
-      gradient.addColorStop(1, "#ebfbff");
+      gradient.addColorStop(0, "#100e2b");
+      gradient.addColorStop(0.6, "#2e124d");
+      gradient.addColorStop(1, "#a855f7");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
-      ctx.fillStyle = "rgba(255,255,255,0.45)";
+      ctx.fillStyle = "rgba(244, 63, 94, 0.25)";
       for (let i = 0; i < 6; i += 1) {
         const x = (i * 210 + performance.now() * 0.01) % (window.innerWidth + 220) - 110;
         const y = 50 + (i % 3) * 45;

@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg-top: #9cd5fc;
-  --bg-bottom: #dff6ff;
-  --panel: rgba(20, 30, 40, 0.72);
-  --panel-border: rgba(255, 255, 255, 0.16);
-  --text: #eff7f2;
-  --muted: #b8cdd0;
-  --accent: #ffd166;
-  --shadow: rgba(7, 11, 17, 0.35);
+  --bg-top: #0a0f1d;
+  --bg-bottom: #05070f;
+  --panel: rgba(13, 20, 32, 0.82);
+  --panel-border: rgba(16, 185, 129, 0.28);
+  --text: #f0fdf4;
+  --muted: #94a3b8;
+  --accent: #10b981;
+  --shadow: rgba(2, 6, 23, 0.65);
 }
 
 * {
@@ -30,8 +30,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.35), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(82, 182, 154, 0.24), transparent 35%);
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.12), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.12), transparent 45%);
   pointer-events: none;
 }
 
@@ -175,8 +175,8 @@ body::before {
 .slot.selected {
   border-color: var(--accent);
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.22);
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 24px rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.12);
 }
 
 .slot-swatch {
