@@ -1,22 +1,16 @@
-# BlockCraft Web
+# React + Vite
 
-A tiny Minecraft-inspired sandbox that runs directly in the browser with plain HTML, CSS, and JavaScript.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Run it
+Currently, two official plugins are available:
 
-Open [index.html](/Users/hasininc/Desktop/luffyyy/minecraftyy/index.html) in a browser, or serve the folder locally:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-```bash
-python3 -m http.server 8000
-```
+## React Compiler
 
-Then visit [http://localhost:8000](http://localhost:8000).
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Controls
+## Expanding the Oxlint configuration
 
-- `W A S D` to move
-- `Space` to jump
-- Mouse to look around
-- Left click to break a block
-- Right click to place a block
-- `1` to `5` to switch the selected block
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
