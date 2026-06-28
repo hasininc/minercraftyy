@@ -6,9 +6,9 @@ const selectedBlockReadout = document.getElementById("selected-block");
 const hintReadout = document.getElementById("hint-readout");
 const hotbar = document.getElementById("hotbar");
 
-const WORLD_SIZE = 20;
-const WORLD_HEIGHT = 8;
-const RENDER_DISTANCE = 18;
+const WORLD_SIZE = 100;
+const WORLD_HEIGHT = 12;
+const RENDER_DISTANCE = 20;
 const GRAVITY = 22;
 const JUMP_SPEED = 8.5;
 const WALK_SPEED = 5.4;
@@ -77,12 +77,12 @@ function buildWorld() {
   for (let x = 0; x < WORLD_SIZE; x += 1) {
     for (let z = 0; z < WORLD_SIZE; z += 1) {
       const height =
-        2 +
+        3 +
         Math.floor(
-          Math.sin(x * 0.55) * 1.1 +
-            Math.cos(z * 0.45) * 1.2 +
-            Math.sin((x + z) * 0.25) * 0.8 +
-            2.6,
+          Math.sin(x * 0.12) * 2.2 +
+            Math.cos(z * 0.09) * 2.2 +
+            Math.sin((x + z) * 0.05) * 1.5 +
+            3.1,
         );
 
       for (let y = 0; y <= Math.min(height, WORLD_HEIGHT); y += 1) {
