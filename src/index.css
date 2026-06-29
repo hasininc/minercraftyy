@@ -35,7 +35,12 @@ body::before {
   pointer-events: none;
 }
 
-
+#game {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  cursor: crosshair;
+}
 
 .hud {
   position: fixed;
