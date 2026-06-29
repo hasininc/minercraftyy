@@ -42,7 +42,16 @@ body::before {
   cursor: crosshair;
 }
 
-
+.hud {
+  position: fixed;
+  inset: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  pointer-events: none;
+}
 
 .brand {
   max-width: 280px;
