@@ -53,15 +53,7 @@ body::before {
   pointer-events: none;
 }
 
-.brand {
-  max-width: 280px;
-  padding: 18px 20px;
-  border-radius: 20px;
-  background: linear-gradient(180deg, rgba(21, 32, 42, 0.78), rgba(21, 32, 42, 0.6));
-  border: 1px solid var(--panel-border);
-  box-shadow: 0 22px 55px var(--shadow);
-  backdrop-filter: blur(10px);
-}
+
 
 .brand h1,
 .panel h2 {
