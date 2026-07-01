@@ -16,6 +16,14 @@
 }
 
 html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Outfit", "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+}
 
 body::before {
   content: "";
